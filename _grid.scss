@@ -1,0 +1,195 @@
+// http://css-tricks.com/snippets/css/a-guide-to-flexbox/
+//http://flexboxgrid.com/
+//http://www.mircozeiss.com/tiny-yet-powerful-grid-built-on-css-flex/
+
+// FLEXBOX
+.flexbox { // for demo / testing
+  .grid-row {
+    display: flex;
+    padding-left:$half-gap;
+    padding-right:$half-gap;
+  }
+
+  %grid-flex {
+    padding-left:$half-gap;
+    padding-right:$half-gap;
+  }
+
+  @for $i from 1 through $columns {
+    .grid-no-#{$i} {
+     flex:$i 1 ($i / $columns) * 100%;
+     max-width: ($i / $columns) * 100%;
+     @extend %grid-flex;
+    }
+  }
+  // MODIFIERS
+  // .-no-gutters can be applied to .grid-wrap to effect the whole grid, or .grid-row to effect a single row
+  .-no-item-gutters {
+    // applied to .grid-wrap or .grid-row
+    %no-gutters {
+      padding-left:0;
+      padding-right:0;
+    }
+    .grid-row {
+      @extend %no-gutters;
+    }
+    @for $i from 1 through $columns {
+      .grid-no-#{$i} {
+         @extend %no-gutters;
+      }
+    }
+    &.grid-row {
+      padding-left:$gap;
+      padding-right:$gap;
+    }
+  }
+  .-no-row-padding {
+    // applied to .grid-wrap or .grid-row
+    .grid-row,
+    &.grid-row {
+      padding-left:0;
+      padding-right:0;
+      margin-left:-$half-gap;
+      margin-right:-$half-gap;
+    }
+  }
+  .-align-top {
+    align-items:flex-start;
+  }
+  .-align-mid {
+    align-items: center;
+  }
+  .-align-btm {
+    align-items:flex-end;
+  }
+
+  // NESTED
+  .grid-row .grid-row {
+    margin-left:-$gap;
+    margin-right:-$gap;
+  }
+
+  // PUSH elements
+  $pushColumns: $columns - 1;
+  @for $i from 1 through $pushColumns {
+      .push-#{$i}.push-#{$i} {
+          //left: ($i / $columns) * 100%;
+          //position: relative;
+          margin-left:($i / $columns) * 100%;
+      }
+  }
+
+  // RESPONSIVE
+  // This needs more work - not tested with different gutter / padding combos, and implementation looks clumsy.
+  @media only screen and (max-width: ($w4 - 1px)) {
+    %flex-small {
+      display:block;
+      width:100%;
+    }
+    .grid-row {
+       @extend %flex-small;
+    }
+    .grid-row .grid-row {
+      margin:0;
+      padding:0;
+    }
+    @for $i from 1 through $columns {
+      .grid-no-#{$i}.grid-no-#{$i} {
+         @extend %flex-small;
+        flex:none;
+        max-width:100%;
+        margin-left:0;
+        padding:0;
+      }
+    }
+  }
+} // .flexbox
+
+// FLOAT fallback grid
+// In production this would be called from a seperate file only when needed
+.no-js,
+.no-flexbox { // Modernizr
+  %clearfix {
+    &:before,
+    &:after {
+      content: "";
+      display: table;
+    }
+    &:after {
+      clear:both;
+    }
+  }
+  .grid-row {
+    overflow:auto;
+    padding-left:5px;
+    padding-right:5px;
+    @extend %clearfix;
+  }
+  %grid-float {
+    padding-left:5px;
+    padding-right:5px;
+    float: left;
+  }
+  @for $i from 1 through $columns {
+    .grid-no-#{$i} {
+      width: ($i / $columns) * 100%;
+      @extend %grid-float;
+    }
+  }
+
+  // MODIFIERS
+  .-no-gutters {
+    .grid-row,
+    [class*="grid-no-"] {
+      padding-left:0;
+      padding-right:0;
+    }
+  }
+  .-no-row-padding {
+    .grid-row,
+    &.grid-row {
+      padding-left:0;
+      padding-right:0;
+      margin-left:-$half-gap;
+      margin-right:-$half-gap;
+    }
+  }
+
+  // NESTED
+  .grid-row .grid-row,
+  .grid-row .grid-row .grid-row {
+    padding-left:0;
+    padding-right:0;
+    margin-left:-$half-gap;
+    margin-right:-$half-gap;
+  }
+
+  // PUSH elements
+  $pushColumns: $columns - 1;
+  @for $i from 1 through $pushColumns {
+    .push-#{$i}.push-#{$i} {
+        //left: ($i / $columns) * 100%;
+        //position: relative;
+        margin-left:($i / $columns) * 100%;
+    }
+  }
+    // RESPONSIVE
+  // This needs more work - not tested with different gutter / padding combos, and implementation looks clumsy. !important - yuk
+  @media only screen and (max-width: ($w4 - 1px)) {
+    %float-small {
+      float: none;
+      width:100%;
+      margin-left:0 !important;
+      padding:0; // This breaks nested grids
+    }
+    .grid-row,
+    .grid-row .grid-row {
+
+    }
+    @for $i from 1 through $columns {
+      .grid-no-#{$i} {
+         @extend %float-small;
+      }
+    }
+  }
+} // .no-flexbox

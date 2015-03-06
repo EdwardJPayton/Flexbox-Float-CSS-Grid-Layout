@@ -1,0 +1,81 @@
+// Demo styles
+.demo {
+  margin:auto;
+  width:100%;
+  max-width:$max-width;
+  font-family: helvetica;
+  h1 {
+    font-weight:bold;
+    font-size:3em;
+    text-transform:uppercase;
+    text-align:center;
+    font-size:2.5em;
+    margin-bottom:-0.25em;
+    color:$dodgerBlue;
+
+  }
+  h2 {
+    color:white;
+    font-size:1.4em;
+    margin:10px 0 20px;
+  }
+  .grid-wrap {
+    text-align:center;
+    padding-top:10px;
+    padding-bottom:10px;
+    background:$dodgerBlue;
+  }
+  .grid-wrap > .grid-row {
+    margin-top:10px;
+    background:rgba(white,0.2);
+  }
+  p {
+    text-align:center;
+    font-size:1.4em;
+    width:100%;
+    background:white;
+    padding:10px 0;
+    margin:0;
+    &.note {
+      background: none;
+      text-align:left;
+      padding:0;
+    }
+  }
+  [class*="push"] p {
+    border-left:4px solid lighten($dodgerBlue,33.3333%);
+  }
+}
+.flexbox {
+  .text-flex {
+    display:none;
+  }
+}
+.no-js,
+.no-flexbox {
+  .text-float {
+    display:none;
+  }
+}
+.support.support {
+  background:transparent;
+  color:white;
+  padding:0;
+  font-size:1.2em;
+}
+.title {
+  display:inline-block;
+}
+button {
+  display:inline-block;
+  background:$dodgerBlue;
+  border:1px solid white;
+  border-radius:3px;
+  color:white;
+  margin-left:4px;
+  cursor: pointer;
+  &:hover, &:active {
+    background: white;
+    color: $dodgerBlue;
+  }
+}

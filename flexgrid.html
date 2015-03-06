@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html class=" no-js">
+<head>
+  <title>Flexbox / Float Grid</title>
+  <link rel="stylesheet" href="style.css" >
+  <!--[if lt IE 9]>
+    <script>
+      document.createElement('header');
+      document.createElement('section');
+      document.createElement('article');
+      document.createElement('aside');
+      document.createElement('nav');
+      document.createElement('footer');
+    </script>
+  <![endif]-->
+</head>
+<body>
+<section class="demo">
+  <h1>Flexbox / Float Grid</h1>
+
+  <div class="grid-wrap">
+    <p class="support" id="support">**Flexbox is supported in your browser**</p>
+    <h2 class="title">A simple flexbox based grid that includes a float fallback for legacy browsers</h2><button id="button">Switch to <span class="text-flex">Flexbox</span><span class="text-float">Float</span></button>
+    <div class="grid-row">
+      <div class="grid-no-1"><p>1</p></div>
+      <div class="grid-no-1"><p>1</p></div>
+      <div class="grid-no-1"><p>1</p></div>
+      <div class="grid-no-1"><p>1</p></div>
+      <div class="grid-no-1"><p>1</p></div>
+      <div class="grid-no-1"><p>1</p></div>
+      <div class="grid-no-1"><p>1</p></div>
+      <div class="grid-no-1"><p>1</p></div>
+      <div class="grid-no-1"><p>1</p></div>
+      <div class="grid-no-1"><p>1</p></div>
+      <div class="grid-no-1"><p>1</p></div>
+      <div class="grid-no-1"><p>1</p></div>
+    </div>
+    <div class="grid-row">
+      <div class="grid-no-2"><p>2</p></div>
+      <div class="grid-no-2"><p>2</p></div>
+      <div class="grid-no-2"><p>2</p></div>
+      <div class="grid-no-2"><p>2</p></div>
+      <div class="grid-no-2"><p>2</p></div>
+      <div class="grid-no-2"><p>2</p></div>
+    </div>
+    <div class="grid-row">
+      <div class="grid-no-3"><p>3</p></div>
+      <div class="grid-no-3"><p>3</p></div>
+      <div class="grid-no-3"><p>3</p></div>
+      <div class="grid-no-3"><p>3</p></div>
+    </div>
+    <div class="grid-row">
+      <div class="grid-no-4"><p>4</p></div>
+      <div class="grid-no-4"><p>4</p></div>
+      <div class="grid-no-4"><p>4</p></div>
+    </div>
+    <div class="grid-row">
+      <div class="grid-no-5"><p>5</p></div>
+      <div class="grid-no-5"><p>5</p></div>
+      <div class="grid-no-2"><p>2</p></div>
+    </div>
+    <div class="grid-row">
+      <div class="grid-no-6"><p>6</p></div>
+      <div class="grid-no-6"><p>6</p></div>
+    </div>
+    <div class="grid-row">
+      <div class="grid-no-7"><p>7</p></div>
+      <div class="grid-no-5"><p>5</p></div>
+    </div>
+    <div class="grid-row">
+      <div class="grid-no-8"><p>8</p></div>
+      <div class="grid-no-4"><p>4</p></div>
+    </div>
+    <div class="grid-row">
+      <div class="grid-no-9"><p>9</p></div>
+      <div class="grid-no-3"><p>3</p></div>
+    </div>
+    <div class="grid-row">
+      <div class="grid-no-10"><p>10</p></div>
+      <div class="grid-no-2"><p>2</p></div>
+    </div>
+    <div class="grid-row">
+      <div class="grid-no-11"><p>11</p></div>
+      <div class="grid-no-1"><p>1</p></div>
+    </div>
+  </div><!-- .grid-wrap -->
+
+  <div class="grid-wrap">
+    <h2>Pushed elements</h2>
+    <p class="note">Todo: flexbox: ok. float:make gutters work, alignments. </p>
+    <div class="grid-row">
+      <div class="grid-no-5"><p>5</p></div>
+      <div class="grid-no-5 push-2"><p>5</p></div>
+    </div>
+    <div class="grid-row">
+      <div class="grid-no-5"><p>5</p></div>
+      <div class="grid-no-2 push-2"><p>2</p></div>
+      <div class="grid-no-2 push-1"><p>2</p></div>
+    </div>
+    <div class="grid-row">
+      <div class="grid-no-4"><p>4</p></div>
+      <div class="grid-no-2 push-4"><p>2</p></div>
+      <div class="grid-no-2"><p>2</p></div>
+    </div>
+    <div class="grid-row">
+      <div class="grid-no-3"><p>3</p></div>
+      <div class="grid-no-1 push-6"><p>1</p></div>
+      <div class="grid-no-1"><p>1</p></div>
+      <div class="grid-no-1"><p>1</p></div>
+    </div>
+    <div class="grid-row">
+      <div class="grid-no-6 push-3"><p>6</p></div>
+    </div>
+    <div class="grid-row">
+      <div class="grid-no-1 push-1"><p>1</p></div>
+      <div class="grid-no-1 push-1"><p>1</p></div>
+      <div class="grid-no-1 push-1"><p>1</p></div>
+      <div class="grid-no-1 push-1"><p>1</p></div>
+      <div class="grid-no-1 push-1"><p>1</p></div>
+      <div class="grid-no-1 push-1"><p>1</p></div>
+    </div>
+  </div> <!-- .grid-wrap -->
+
+  <div class="grid-wrap">
+    <h2>Nested Grids</h2>
+    <p class="note">Todo: Flexbox: no-gutters leaves a 1px wide border, % gap widths not calculated correctly. Float: ok.
+    <div class="grid-row">
+      <div class="grid-no-6">
+        <div class="grid-row">
+          <div class="grid-no-8"><p>6/8</p></div>
+          <div class="grid-no-4"><p>6/4</p></div>
+        </div>
+      </div>
+      <div class="grid-no-6">
+        <div class="grid-row">
+          <div class="grid-no-8">
+            <div class="grid-row">
+              <div class="grid-no-8"><p>6/8/8</p></div>
+              <div class="grid-no-4"><p>6/8/4</p></div>
+            </div>
+          </div>
+          <div class="grid-no-4"><p>6/4</p></div>
+        </div>
+      </div>
+    </div>
+  </div> <!-- .grid-wrap -->
+
+</section> <!-- .container -->
+
+<script src="http://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js"></script>
+<script>
+if(!Modernizr.flexbox) {
+  // For demo purposes this changes text
+  // In production this would load the float fallback stylesheet
+  document.getElementById("support").innerHTML = "**Flexbox is not supported in your browser**";
+} // end if
+
+// Quick and dirty swap classes to simulate flexbox support
+function togClass() {
+    document.getElementsByTagName("html")[0].classList.toggle('flexbox');
+    document.getElementsByTagName("html")[0].classList.toggle('no-flexbox');
+}
+document.getElementById('button').addEventListener('click', togClass);
+</script>
+</body>
+</html>
