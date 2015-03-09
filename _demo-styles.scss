@@ -28,6 +28,12 @@
   .grid-wrap > .grid-row {
     margin-top:10px;
     background:rgba(white,0.2);
+    > [class*="grid-no-"] {
+      margin-top:10px;
+      &:first-child {
+        margin-top:0;
+      }
+    }
   }
   p {
     text-align:center;

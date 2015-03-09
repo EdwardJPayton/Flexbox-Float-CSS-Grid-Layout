@@ -336,6 +336,10 @@ html, body {
   .demo .grid-wrap > .grid-row {
     margin-top: 10px;
     background: rgba(255, 255, 255, 0.2); }
+    .demo .grid-wrap > .grid-row > [class*="grid-no-"] {
+      margin-top: 10px; }
+      .demo .grid-wrap > .grid-row > [class*="grid-no-"]:first-child {
+        margin-top: 0; }
   .demo p {
     text-align: center;
     font-size: 1.4em;
