@@ -37,8 +37,10 @@ Now we have Flexbox, a proper layout solution.
 This is the first stage release and includes a couple of niggles which are actively being worked on.
 ### Flexbox layout
 + On grids without gutters, leaves a 1px wide gap between items on nested grids
+
 ### Float layout
 + Gutters are not correctly calculated on nested grids
+
 ### Responsive (Flexbox) layout
 + Margins are not correctly maintained on nested grids in demo
 
