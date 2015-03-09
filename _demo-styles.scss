@@ -34,6 +34,9 @@
         margin-top:0;
       }
     }
+    .grid-row [class*="grid-no-"] {
+      margin-top:10px;
+    }
   }
   p {
     text-align:center;

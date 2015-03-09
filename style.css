@@ -340,6 +340,8 @@ html, body {
       margin-top: 10px; }
       .demo .grid-wrap > .grid-row > [class*="grid-no-"]:first-child {
         margin-top: 0; }
+    .demo .grid-wrap > .grid-row .grid-row [class*="grid-no-"] {
+      margin-top: 10px; }
   .demo p {
     text-align: center;
     font-size: 1.4em;
