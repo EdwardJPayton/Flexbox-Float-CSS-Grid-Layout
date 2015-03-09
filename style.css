@@ -339,7 +339,7 @@ html, body {
     @media only screen and (max-width: 399px) {
     .demo .grid-wrap > .grid-row > [class*="grid-no-"] {
       margin-top: 10px; }
-      .demo .grid-wrap > .grid-row > [class*="grid-no-"]:first-child {
+      .demo .grid-wrap > .grid-row .grid-row [class*="grid-no-"]:first-child {
         margin-top: 0; }
     }
   .demo p {
